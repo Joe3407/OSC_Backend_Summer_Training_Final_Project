@@ -54,7 +54,8 @@ export const login = async (req : Request , res : Response)=>{
             },
             process.env.JWT_SECRET as string,
             {
-                expiresIn: "1d"
+                expiresIn:"1d" 
+                //process.env.JWT_EXPIRES_IN as string
             }
         );
         return res.status(200).json({message  : "login successful" , token });
