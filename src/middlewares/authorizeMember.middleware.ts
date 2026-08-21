@@ -1,6 +1,6 @@
 import {Request, Response, NextFunction} from 'express';
 import {AuthRequest} from './authenticate.middleware';
-
+//---------------------------------------------------------------------------------
 
 export const authorizeMember = (req: AuthRequest, res: Response, next: NextFunction) => {
     const userRole = "Member";
