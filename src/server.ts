@@ -3,7 +3,7 @@ import express from "express";
 import {connectDB} from "./config/db";
 import myRouter from "./routes/routes";
 import swaggerUi from "swagger-ui-express";
-import {specs} from "./config/swaggerdoc"
+import specs from "./config/swaggerdoc"
 import cookieParser from "cookie-parser";
 
 const app = express();
