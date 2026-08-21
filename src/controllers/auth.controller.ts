@@ -18,7 +18,7 @@ export const register = async (req:Request , res :Response)=>{
             password: hashedpassword,
             role
         });
-        res.status(201).json({message : "user created successfully" , user:{
+        return res.status(201).json({message : "user created successfully" , user:{
             id : user._id,
             fullname : user.fullName ,
             email:user.email,
@@ -26,7 +26,7 @@ export const register = async (req:Request , res :Response)=>{
         }})
     }
     catch(error){
-     res.status(500).json({message : "registration failed"})
+     return res.status(500).json({message : "registration failed"})
     }
         
 }

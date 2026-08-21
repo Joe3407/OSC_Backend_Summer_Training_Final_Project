@@ -1,8 +1,7 @@
 import {Request , Response} from "express"
-import mongoose from "mongoose" ;
 import { Booking  } from "../models/bookingmodels";
 import { ClassSession } from "../models/classesmodels";
-import { CANCELLED } from "dns";
+
 
 export const createbooking = async (req: Request , res : Response)=>{
     try {
@@ -50,11 +49,11 @@ try{
     }
     booking.status = "cancelled"
     await booking.save();
-    res.status(200).json({message:"booking cancelled successfully" , booking})
+    return res.status(200).json({message:"booking cancelled successfully" , booking})
     
 }
 catch(error){
-    res.status(500).json({message : "failed to cancel booking"})
+    return res.status(500).json({message : "failed to cancel booking"})
 }
 }
 

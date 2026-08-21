@@ -33,7 +33,7 @@ export const ValidateClassSessionData = (req: Request, res: Response, next: Next
         return res.status(400).json({ message: "Missing required fields" });
     }
 
-    if (typeof title !== "string" || title.trim().length === 0) {
+    if (typeof title !== "string" || title.trim().length === 0) { 
         return res.status(400).json({ message: "Title must be a non-empty string" });
     }
 
