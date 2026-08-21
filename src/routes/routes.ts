@@ -18,7 +18,7 @@ router.get("/classes/:id", authenticate, authorizeMember, getclassbyid);
 router.put("/classes/:id", authenticate, authorizeTrainer, ValidateClassSessionData, updateclass);
 router.delete("/classes/:id", authenticate, authorizeTrainer, deleteclass);
 
-router.post("/bookings", authenticate, authorizeMember, createbooking);
+router.post("/bookings", authenticate, authorizeMember, ValidateBookingData, createbooking);
 router.patch("/bookings/:id/cancel", authenticate, authorizeMember, cancelbooking);
 
 export default router;
