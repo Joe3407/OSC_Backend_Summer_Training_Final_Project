@@ -6,7 +6,7 @@ const options: swaggerJsdoc.Options = {
 
     info: {
       title: "Gym Management API",
-      version: "1.0.0",
+      version: "1.0.3",
       description: "API for managing gym members, trainers, classes, and bookings.",
     },
 
