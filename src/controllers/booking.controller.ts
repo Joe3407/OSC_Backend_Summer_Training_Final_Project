@@ -5,32 +5,32 @@ import { ClassSession } from "../models/classesmodels";
 
 export const createbooking = async (req: Request , res : Response)=>{
     try {
-    const {sessionid , memberid , status} = req.body ;
-    const session = await ClassSession.findById(sessionid)
-    if(!session){
+    const {session , member } = req.body ;
+    const Session = await ClassSession.findById(session)
+    if(!Session){
         return res.status(404).json({message : "class session not found"})
     }
     const existingbooking = await Booking.findOne({
 
-        session : sessionid,
-        member:memberid,
+        session : session,
+        member:member,
         status : "booked"
     })
     if(existingbooking){
         return res.status(400).json({message : "class session is booked already"})
     }
     const bookingcount = await Booking.countDocuments({
-        session : sessionid ,
+        session : session, 
         status : "booked"
 
     })
-    if(bookingcount >= session.capacity){
+    if(bookingcount >= Session.capacity){
         return res.status(400).json({message : "class session is fully booked"})
     }
 
     const booking = await Booking.create({
-        session: sessionid,
-        member: memberid,
+        session: session,
+        member: member,
         status: "booked"
     })
 
