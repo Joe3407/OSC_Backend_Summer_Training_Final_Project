@@ -12,8 +12,8 @@ const options: swaggerJsdoc.Options = {
 
     servers: [
       {
-        url: "https://oscbackendsummertrainingfinalproject-production.up.railway.app/api-docs",
-        description: "Production server",
+        "url": "https://oscbackendsummertrainingfinalproject-production.up.railway.app/api-docs",
+        "description": "Production server",
       },
       {
         "url": "http://localhost:3000",
